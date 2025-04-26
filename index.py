@@ -37,5 +37,5 @@ def generate_profile():
     }
     return jsonify(profile)
 
-# Required for Vercel
-handler = app
+def handler(environ, start_response):
+    return app(environ, start_response)
