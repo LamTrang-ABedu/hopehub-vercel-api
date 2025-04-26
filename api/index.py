@@ -36,6 +36,6 @@ def generate_profile():
     }
     return jsonify(profile)
 
-# Adapter cho Vercel
-def handler(request, context):
-    return app(request.scope, request.receive, request.send)
+# Required for Vercel
+def handler(environ, start_response):
+    return app(environ, start_response)
