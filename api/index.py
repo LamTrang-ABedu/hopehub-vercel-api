@@ -37,5 +37,13 @@ def generate_profile():
     return jsonify(profile)
 
 # Required for Vercel
-def handler(environ, start_response):
-    return app(environ, start_response)
+# Expose Flask app as WSGI callable for serverless
+def handler(event, context):
+    from werkzeug.middleware.dispatcher import DispatcherMiddleware
+    from werkzeug.wrappers import Response
+
+    application = DispatcherMiddleware(Response('Not Found', status=404), {
+        "/api/profile": app
+    })
+    return application(event, context)
+
