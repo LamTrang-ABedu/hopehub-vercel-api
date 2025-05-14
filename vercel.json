@@ -3,9 +3,9 @@
   "routes": [
     { "src": "/api/tts", "dest": "/api/tts.js" },
     { "src": "/api/voice", "dest": "/api/voice.js" },
-    { "src": "/api/media-download", "dest": "/api/media-download.js" },
+    { "src": "/api/download", "dest": "/api/download.js" },
     { "src": "/api/profile-faker", "dest": "/api/profile-faker.js" },
-    { "src": "/api/crawl", "dest": "/api/crawl.js" },
-    { "src": "/api/crawl-latest", "dest": "/api/crawl-latest.js" }
+    { "src": "/api/crawl-manga", "dest": "/api/crawl-manga.js" },
+    { "src": "/api/crawl-manga-latest", "dest": "/api/crawl-manga-latest.js" }
   ]
 }
